@@ -37,7 +37,7 @@ namespace TournamentLib
                 }
                 
             }
-            // TODO: Implement this method
+            
 
             return true;
         }
@@ -51,7 +51,7 @@ namespace TournamentLib
                 WinningTeams.Add(matches[i].Winner);
             }
             return WinningTeams;
-            // TODO: Implement this method
+            
             
         }
 
@@ -72,7 +72,7 @@ namespace TournamentLib
                     WinningTeams.Add(match.SecondOpponent);
                 }
             }
-            // TODO: Implement this method
+            
             return LosingTeams;
         }
     }
