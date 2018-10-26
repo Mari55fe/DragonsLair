@@ -47,6 +47,11 @@ namespace DragonsLair
             Console.WriteLine("\n\n");
         }
 
+        public TournamentRepo GetTournamentRepository()
+        {
+            throw new NotImplementedException();
+        }
+
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             // Do not implement this method
