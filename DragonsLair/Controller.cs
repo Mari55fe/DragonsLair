@@ -54,7 +54,20 @@ namespace DragonsLair
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
-            // Do not implement this method
+            bool IsRoundFinished;
+            Round lastRound;
+            Tournament t = tournamentRepository.GetTournament(tournamentName);
+            int numberOfRounds = t.GetNumberOfRounds();
+            if(numberOfRounds == 0)
+            {
+                lastRound = null;
+                IsRoundFinished = true;
+            }
+            else
+            {
+                lastRound = t.GetRound(numberOfRounds - 1);
+
+            }
         }
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
