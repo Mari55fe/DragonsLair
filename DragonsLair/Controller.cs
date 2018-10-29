@@ -90,7 +90,7 @@ namespace DragonsLair
                     Round newRound = new Round();
                     if (teams.Count % 2 != 0) //vi tester med modulus om der er et lige eller ulige antal teams
                     {
-                        if(numberOfRounds > 0)
+                        if (numberOfRounds > 0)
                         {
                             oldFreeRider = lastRound.FreeRider;
                         }
@@ -104,11 +104,26 @@ namespace DragonsLair
                             newFreeRider = teams[i];
                             i++;
                         }
-                        
+
                         newRound.FreeRider = newFreeRider;
                     }
-
+                    for (int i = 0; i == teams.Count; i += 2)
+                    {
+                        Match match = new Match();
+                        match.FirstOpponent = teams[i];
+                        match.SecondOpponent = teams[i + 1];
+                        newRound.AddMatch(match);
+                    }
+                    t.AddRound(newRound);
                 }
+                else
+                {
+                    throw new Exception("TournamentIsFinshed");
+                }
+            }
+            else
+            {
+                throw new Exception("TournamentIsFinished");
             }
         }
 
