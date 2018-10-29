@@ -5,7 +5,8 @@ namespace TournamentLib
     public class Round
     {
         private List<Match> matches = new List<Match>();
-        
+        private Team freeRider;
+        public Team FreeRider{ get; set;}
 
         public void AddMatch(Match m)
         {
