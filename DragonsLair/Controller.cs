@@ -49,7 +49,7 @@ namespace DragonsLair
 
         public TournamentRepo GetTournamentRepository()
         {
-            throw new NotImplementedException();
+            return tournamentRepository; //
         }
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
@@ -61,6 +61,7 @@ namespace DragonsLair
             List<Team> teams = new List<Team>();
             Tournament t = tournamentRepository.GetTournament(tournamentName);
             int numberOfRounds = t.GetNumberOfRounds();
+            List<Team> scramble;
             if(numberOfRounds == 0)
             {
                 lastRound = null;
@@ -87,8 +88,9 @@ namespace DragonsLair
                 }
                 if (teams.Count > 1)
                 {
+                    scramble = Scramble(teams);
                     Round newRound = new Round();
-                    if (teams.Count % 2 != 0) //vi tester med modulus om der er et lige eller ulige antal teams
+                    if (scramble.Count % 2 != 0) //vi tester med modulus om der er et lige eller ulige antal teams
                     {
                         if (numberOfRounds > 0)
                         {
@@ -98,20 +100,21 @@ namespace DragonsLair
                         {
                             oldFreeRider = null;
                         }
+                        int i = 0; //i skal declares udefor while loppets scope
                         while (newFreeRider == oldFreeRider)
                         {
-                            int i = 0;
-                            newFreeRider = teams[i];
+                            newFreeRider = scramble[i];
                             i++;
                         }
 
                         newRound.FreeRider = newFreeRider;
+                        scramble.Remove(newFreeRider); // nu gøre vi sådan at den fejner new freerider fra scramble
                     }
-                    for (int i = 0; i == teams.Count; i += 2)
+                    for (int i = 0; i == scramble.Count; i += 2)
                     {
                         Match match = new Match();
-                        match.FirstOpponent = teams[i];
-                        match.SecondOpponent = teams[i + 1];
+                        match.FirstOpponent = scramble[i];
+                        match.SecondOpponent = scramble[i + 1];
                         newRound.AddMatch(match);
                     }
                     t.AddRound(newRound);
@@ -125,6 +128,11 @@ namespace DragonsLair
             {
                 throw new Exception("TournamentIsFinished");
             }
+        }
+
+        private List<Team> Scramble(List<Team> teams)
+        {
+            return teams;
         }
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)

@@ -6,7 +6,7 @@ namespace TournamentLib
     {
         private List<Match> matches = new List<Match>();
         private Team freeRider;
-        public Team FreeRider{ get; set;}
+        public Team FreeRider { get { return freeRider; } set { freeRider = value; } }
 
         public void AddMatch(Match m)
         {
