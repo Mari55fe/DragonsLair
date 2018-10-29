@@ -55,6 +55,8 @@ namespace DragonsLair
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             bool isRoundFinished;
+            Team oldFreeRider;
+            Team newFreeRider = null;
             Round lastRound;
             List<Team> teams = new List<Team>();
             Tournament t = tournamentRepository.GetTournament(tournamentName);
@@ -83,8 +85,28 @@ namespace DragonsLair
                         teams.Add(lastRound.FreeRider);
                     }
                 }
-                if ()
+                if (teams.Count > 1)
                 {
+                    Round newRound = new Round();
+                    if (teams.Count % 2 != 0) //vi tester med modulus om der er et lige eller ulige antal teams
+                    {
+                        if(numberOfRounds > 0)
+                        {
+                            oldFreeRider = lastRound.FreeRider;
+                        }
+                        else
+                        {
+                            oldFreeRider = null;
+                        }
+                        while (newFreeRider == oldFreeRider)
+                        {
+                            int i = 0;
+                            newFreeRider = teams[i];
+                            i++;
+                        }
+                        
+                        newRound.FreeRider = newFreeRider;
+                    }
 
                 }
             }
