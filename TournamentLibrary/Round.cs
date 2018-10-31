@@ -18,7 +18,7 @@ namespace TournamentLib
 
             foreach (Match item in matches)
             {
-                if (item.Winner.Equals(team))
+                if (item.FirstOpponent.Name.Equals(team) || item.SecondOpponent.Name.Equals(team))
                 {
                     result = item;
                 }

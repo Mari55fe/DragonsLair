@@ -51,7 +51,10 @@ namespace DragonsLair
         {
             return tournamentRepository; //
         }
-
+        private List<Team> Scramble(List<Team> teams)
+        {
+            return teams;
+        }
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             bool isRoundFinished;
@@ -110,7 +113,7 @@ namespace DragonsLair
                         newRound.FreeRider = newFreeRider;
                         scramble.Remove(newFreeRider); // nu gøre vi sådan at den fejner new freerider fra scramble
                     }
-                    for (int i = 0; i == scramble.Count; i += 2)
+                    for (int i = 0; i < scramble.Count; i += 2)
                     {
                         Match match = new Match();
                         match.FirstOpponent = scramble[i];
@@ -129,10 +132,7 @@ namespace DragonsLair
                 throw new Exception("TournamentIsFinished");
             }
         }
-        private List<Team> Scramble(List<Team> teams)
-        {
-            return teams;
-        }
+        
 
 
 
