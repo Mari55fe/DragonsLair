@@ -138,12 +138,12 @@ namespace DragonsLair
             if (m != null && m.Winner == null)
             {
                 Team w = t.GetTeam(winner);
-                Control.WriteLine("Kampen mellem "The Valyrians" og "The Megareans" i runde 2 i turneringen "Vinter Turnering" er nu afviklet. Vinderen blev "The Megareans".");
+                Console.WriteLine("Kampen mellem " + m.FirstOpponent + " og " + m.SecondOpponent + " i runde 2 i turneringen " + tournamentName + " er nu afviklet. Vinderen blev " + winner + ".");
                 m.Winner = w;
             }
             else
             {
-                throw new Exception("failure");
+                Console.WriteLine("Holdet " + winner + " kan ikke være vinder i runde 2, da holdet enten ikke deltager i runde 2 eller kampen allerede er registreret med en vinder.");
             }
         }
 
