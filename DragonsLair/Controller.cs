@@ -130,9 +130,15 @@ namespace DragonsLair
             }
         }
 
-        internal void SaveMatch(string tournamentName, int round, string winner)
+        public void SaveMatch(string tournamentName, int round, string winner)
         {
-            throw new NotImplementedException();
+            Tournament t = tournamentRepository.GetTournament(tournamentName);
+            Round r = t.GetRound(round);
+            Match m = r.GetMatch(winner);
+            if (m != null && m.Winner == null)
+            {
+                List<Team> w = t.GetTeam(winner);
+            }
         }
 
         private List<Team> Scramble(List<Team> teams)
@@ -142,13 +148,7 @@ namespace DragonsLair
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
         {
-            Tournament t = tournamentRepository.GetTournament(tournamentName);
-            Round r = t.GetRound(roundNumber);
-            Match m = r.GetMatch(winningTeam);
-            if(m != null && m.Winner == null)
-            {
-                List<Team> w = t.GetTeam();
-            }
+            
         }
     }
 }
