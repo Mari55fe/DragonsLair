@@ -12,6 +12,19 @@ namespace TournamentLib
         {
             matches.Add(m);
         }
+        public Match GetMatch(string team)
+        {
+            Match result = null;
+
+            foreach (Match item in matches)
+            {
+                if (item.Winner.Equals(team))
+                {
+                    result = item;
+                }
+            }
+            return result;
+        }
 
         public Match GetMatch(string teamName1, string teamName2)
         {

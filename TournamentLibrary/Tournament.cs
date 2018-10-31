@@ -6,6 +6,20 @@ namespace TournamentLib
     {
         private List<Team> teams = new List<Team>();
         private List<Round> rounds = new List<Round>();
+        public Team GetTeam(string teamName)
+        {
+            Team result = null;
+
+            foreach(Team item in teams)
+            {
+                if (item.Name.Equals(teamName))
+                {
+                    result = item;
+                }
+            }
+            return result;
+        }
+       
 
         public string Name { get; private set; }
 
