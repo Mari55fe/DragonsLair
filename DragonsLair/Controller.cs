@@ -129,6 +129,12 @@ namespace DragonsLair
                 throw new Exception("TournamentIsFinished");
             }
         }
+        private List<Team> Scramble(List<Team> teams)
+        {
+            return teams;
+        }
+
+
 
         public void SaveMatch(string tournamentName, int round, string winner)
         {
@@ -145,11 +151,6 @@ namespace DragonsLair
             {
                 Console.WriteLine("Holdet " + winner + " kan ikke være vinder i runde 2, da holdet enten ikke deltager i runde 2 eller kampen allerede er registreret med en vinder.");
             }
-        }
-
-        private List<Team> Scramble(List<Team> teams)
-        {
-            return teams;
         }
     }
 }
