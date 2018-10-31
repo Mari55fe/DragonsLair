@@ -130,6 +130,11 @@ namespace DragonsLair
             }
         }
 
+        internal void SaveMatch(string tournamentName, int round, string winner)
+        {
+            throw new NotImplementedException();
+        }
+
         private List<Team> Scramble(List<Team> teams)
         {
             return teams;

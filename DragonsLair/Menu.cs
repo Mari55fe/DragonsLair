@@ -71,17 +71,15 @@ namespace DragonsLair
 
         private void SaveMatch()
         {
-            private void SaveMatch()
-            {
-                Console.Write("Angiv navn på turnering: ");
-                string tournamentName = Console.ReadLine();
-                Console.Write("Angiv runde: ");
-                int round = int.Parse(Console.ReadLine());
-                Console.Write("Angiv vinderhold: ");
-                string winner = Console.ReadLine();
-                Console.Clear();
-                control.SaveMatch(tournamentName, round, winner);
-            }
+             Console.Write("Angiv navn på turnering: ");
+             string tournamentName = Console.ReadLine();
+             Console.Write("Angiv runde: ");
+             int round = int.Parse(Console.ReadLine());
+             Console.Write("Angiv vinderhold: ");
+             string winner = Console.ReadLine();
+             Console.Clear();
+             control.SaveMatch(tournamentName, round, winner);
+            
 
         }
     }
