@@ -137,7 +137,13 @@ namespace DragonsLair
             Match m = r.GetMatch(winner);
             if (m != null && m.Winner == null)
             {
-                List<Team> w = t.GetTeam(winner);
+                Team w = t.GetTeam(winner);
+                throw new Exception("success");
+                m.Winner = w;
+            }
+            else
+            {
+                throw new Exception("failure");
             }
         }
 
