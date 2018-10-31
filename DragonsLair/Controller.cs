@@ -138,7 +138,7 @@ namespace DragonsLair
             if (m != null && m.Winner == null)
             {
                 Team w = t.GetTeam(winner);
-                throw new Exception("success");
+                Control.WriteLine("Kampen mellem "The Valyrians" og "The Megareans" i runde 2 i turneringen "Vinter Turnering" er nu afviklet. Vinderen blev "The Megareans".");
                 m.Winner = w;
             }
             else
@@ -150,11 +150,6 @@ namespace DragonsLair
         private List<Team> Scramble(List<Team> teams)
         {
             return teams;
-        }
-
-        public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
-        {
-            
         }
     }
 }
