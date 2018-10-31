@@ -88,7 +88,7 @@ namespace DragonsLair
                 }
                 if (teams.Count > 1)
                 {
-                    scramble = Scramble(teams);
+                    scramble = Scramble(teams).ToList();
                     Round newRound = new Round();
                     if (scramble.Count % 2 != 0) //vi tester med modulus om der er et lige eller ulige antal teams
                     {
