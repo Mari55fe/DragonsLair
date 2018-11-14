@@ -133,7 +133,11 @@ namespace DragonsLair
             }
         }
         
-
+        public string NewTournament(string Tournamentname)
+        {
+            TournamentRepo.
+            return null;
+        }
 
 
         public void SaveMatch(string tournamentName, int round, string winner)
