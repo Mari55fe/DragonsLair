@@ -5,10 +5,10 @@ namespace TournamentLib
     public class TournamentRepo
     {
         private List<Tournament> tournaments = new List<Tournament>();
-        public void AddTurnament(string Name)
+        public void AddTurnament(Tournament Name)
         {
-            Tournament bla = new Tournament(Name);
-            tournaments.Add(bla);
+            
+            tournaments.Add(Name);
         }
 
         private Tournament winterTournament = new Tournament("Vinter Turnering");
@@ -21,5 +21,6 @@ namespace TournamentLib
             }
             return null;
         }
+        
     }
-}
+} 
