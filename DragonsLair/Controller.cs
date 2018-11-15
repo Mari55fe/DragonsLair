@@ -133,9 +133,9 @@ namespace DragonsLair
             }
         }
         
-        public string NewTournament(string Tournamentname)
+        public string NewTournament(Tournament tournamentname)
         {
-            TournamentRepo.
+            Tournament n = TournamentRepo.AddTournament(tournamentname);
             return null;
         }
 
