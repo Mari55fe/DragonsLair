@@ -4,13 +4,7 @@ namespace TournamentLib
 {
     public class TournamentRepo
     {
-        private List<Tournament> tournaments = new List<Tournament>();
-   
-               
-        public void AddTournament(Tournament name)
-        {
-            tournaments.Add(name);
-        }
+       
 
         private Tournament winterTournament = new Tournament("Vinter Turnering");
 

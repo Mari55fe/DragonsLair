@@ -4,8 +4,14 @@ namespace TournamentLib
 {
     public class Tournament
     {
+
         private List<Team> teams = new List<Team>();
         private List<Round> rounds = new List<Round>();
+        private List<Tournament> Tourneringer = new List<Tournament>();
+
+        public object newtournamentName;
+        
+       
         public Team GetTeam(string teamName)
         {
             Team result = null;
@@ -22,10 +28,16 @@ namespace TournamentLib
        
 
         public string Name { get; private set; }
+        public static string tournamentName { get; private set; }
 
         public Tournament(string tournamentName)
         {
             Name = tournamentName;
+        }
+
+        public Tournament(string tournamentName, object newtournamentName) : this(tournamentName)
+        {
+            this.newtournamentName = newtournamentName;
         }
 
         public List<Team> GetTeams()

@@ -9,6 +9,9 @@ namespace DragonsLair
     {
         
         private TournamentRepo tournamentRepository = new TournamentRepo();
+        public List<Tournament> Tourneringer = new List<Tournament>();
+        
+
 
         public void ShowScore(string tournamentName)
         {
@@ -132,13 +135,13 @@ namespace DragonsLair
                 throw new Exception("TournamentIsFinished");
             }
         }
-        
-        public string NewTournament(Tournament tournamentname)
-        {
-            Tournament n = TournamentRepo.AddTournament(tournamentname);
-            return null;
-        }
 
+        public void NewTournament(string newTurnamentName)
+        {
+            Tournament NyTournering = new Tournament(newTurnamentName);
+            Tourneringer.Add(NyTournering);
+
+        }
 
         public void SaveMatch(string tournamentName, int round, string winner)
         {
