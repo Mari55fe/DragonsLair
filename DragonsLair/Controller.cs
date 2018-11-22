@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TournamentLib;
+using System.IO;
 
 namespace DragonsLair
 {
@@ -138,10 +139,13 @@ namespace DragonsLair
 
         public void NewTournament(string newTurnamentName)
         {
-            Tournament NyTournering = new Tournament(newTurnamentName);
-            Tourneringer.Add(NyTournering);
-
+            Tournament NyTournering = new Tournament(newTurnamentName); //opretter nyt Tournament objekt til den nye tournering
+            Tourneringer.Add(NyTournering);// tilføjer den nye tournering til listen "Tourneringer" i Tournament.cs
+            
         }
+
+        
+        
 
         public void SaveMatch(string tournamentName, int round, string winner)
         {
@@ -159,5 +163,13 @@ namespace DragonsLair
                 Console.WriteLine("Holdet " + winner + " kan ikke være vinder i runde 2, da holdet enten ikke deltager i runde 2 eller kampen allerede er registreret med en vinder.");
             }
         }
+        public void SaveTournament(string newTournamentName)
+        {
+            StreamWriter writer = new StreamWriter("Turneringer.txt", true);
+            writer.WriteLine(newTournamentName);
+            writer.Close();
+        }
+       
+
     }
 }

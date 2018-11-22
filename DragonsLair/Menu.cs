@@ -48,6 +48,7 @@ namespace DragonsLair
             Console.WriteLine("4. Opret en ny Turnering");
             Console.WriteLine("");
             Console.WriteLine("0. Exit");
+            
         }
 
         private string GetUserChoice()
@@ -88,7 +89,8 @@ namespace DragonsLair
         {
             Console.WriteLine("Angiv navn på ny Turnering:");
             string newTurnamentName = Console.ReadLine();
-            control.NewTournament(newTurnamentName);
+            control.SaveTournament(newTurnamentName);
+            
            /* for (int i = 0; i < control.Tourneringer.Count; i++)
             {
                 Console.WriteLine(control.Tourneringer[i].ToString());
