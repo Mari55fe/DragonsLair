@@ -89,8 +89,9 @@ namespace DragonsLair
         {
             Console.WriteLine("Angiv navn på ny Turnering:");
             string newTurnamentName = Console.ReadLine();
+            Console.Clear();
             control.SaveTournament(newTurnamentName);
-            
+            Console.WriteLine("Ny Turnering er gemt.");
            /* for (int i = 0; i < control.Tourneringer.Count; i++)
             {
                 Console.WriteLine(control.Tourneringer[i].ToString());
